@@ -1,0 +1,20 @@
+databases:
+  - name: genschooldb
+    plan: free
+    databaseName: genschool
+    user: genschooluser
+
+services:
+  - type: web
+    plan: free
+    name: genschool-service
+    runtime: java
+    buildCommand: "mvn clean package"
+    startCommand: "java -jar target/genschool-0.0.1-SNAPSHOT.jar"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: genschooldb
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
