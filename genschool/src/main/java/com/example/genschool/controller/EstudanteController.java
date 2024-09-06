@@ -55,21 +55,7 @@ public class EstudanteController {
         }
     }
 
-/*@PutMapping("/{id}")   
-    public ResponseEntity<Estudante> updateEstudante(@PathVariable Long id, @RequestBody Estudante estudanteDetails) {
-        Estudante estudante = estudanteService.findById(id);
-        if (estudante != null) {
-            estudante.setNome(estudanteDetails.getNome());
-            estudante.setIdade(estudanteDetails.getIdade());
-            estudante.setNotaPrimeiroSemestre(estudanteDetails.getNotaPrimeiroSemestre());
-            estudante.setNotaSegundoSemestre(estudanteDetails.getNotaSegundoSemestre());
-            estudante.setNomeProfessor(estudanteDetails.getNomeProfessor());
-            estudante.setNumeroSala(estudanteDetails.getNumeroSala());
-            return ResponseEntity.ok(estudanteService.save(estudante));
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }*/
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteEstudante(@PathVariable Long id) {
@@ -81,14 +67,5 @@ public class EstudanteController {
         }
     }
 
-    /*@DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteEstudante(@PathVariable Long id) {
-        Estudante estudante = estudanteService.findById(id);
-        if (estudante != null) {
-            estudanteService.deleteById(id);
-            return ResponseEntity.noContent().build();
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }*/
+
 }
